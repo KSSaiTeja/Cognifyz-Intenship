@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile-Friendly Navigation Menu</title>
+    <style>
+      /* Default styles for the navigation menu */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .navbar {
+        background-color: #333;
+        color: #fff;
+      }
+      .navbar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+      }
+      .navbar ul li {
+        display: inline-block;
+      }
+      .navbar ul li a {
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        color: #fff;
+      }
+      .navbar ul li a:hover {
+        background-color: #555;
+      }
+
+      /* Media query for the hamburger menu */
+      @media only screen and (max-width: 768px) {
+        .navbar ul {
+          display: none;
+        }
+        .navbar ul.show {
+          display: block;
+        }
+        .navbar ul li {
+          display: block;
+          text-align: center;
+        }
+        .navbar ul li a {
+          padding: 10px;
+        }
+        .menu-toggle {
+          display: block;
+          background-color: #333;
+          color: #fff;
+          text-align: center;
+          padding: 20px;
+          cursor: pointer;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      // JavaScript function to toggle the visibility of the navigation menu
+      function toggleMenu() {
+        var menu = document.querySelector(".navbar ul");
+        menu.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
